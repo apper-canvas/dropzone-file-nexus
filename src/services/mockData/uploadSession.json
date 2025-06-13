@@ -1,0 +1,20 @@
+[
+  {
+    "id": "session_1",
+    "totalFiles": 5,
+    "totalSize": 25165824,
+    "completedFiles": 3,
+    "startTime": "2024-01-15T09:00:00Z",
+    "endTime": null,
+    "status": "active"
+  },
+  {
+    "id": "session_2",
+    "totalFiles": 8,
+    "totalSize": 52428800,
+    "completedFiles": 8,
+    "startTime": "2024-01-14T14:30:00Z",
+    "endTime": "2024-01-14T14:45:00Z",
+    "status": "completed"
+  }
+]

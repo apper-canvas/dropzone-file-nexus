@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'react-toastify/dist/ReactToastify.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+* {
+  max-width: 100%;
+}
+
+.main-content {
+  overflow-y: auto;
+  height: 100vh;
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .glass-morphism {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .drag-over {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+    border-color: #6366F1;
+    transform: scale(1.02);
+  }
+}
+
+/* Gradient progress bar */
+.progress-bar {
+  background: linear-gradient(90deg, #6366F1 0%, #8B5CF6 50%, #EC4899 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* File type specific gradients */
+.file-image { background: linear-gradient(135deg, #10B981 0%, #3B82F6 100%); }
+.file-video { background: linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%); }
+.file-audio { background: linear-gradient(135deg, #F59E0B 0%, #EF4444 100%); }
+.file-document { background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%); }
+.file-archive { background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%); }
+.file-other { background: linear-gradient(135deg, #64748B 0%, #475569 100%); }
