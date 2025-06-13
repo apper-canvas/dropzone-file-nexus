@@ -1,18 +1,19 @@
 import { motion } from 'framer-motion'
 import { formatDistanceToNow } from 'date-fns'
+import { forwardRef } from 'react'
 import ApperIcon from '@/components/ApperIcon'
 import Button from '@/components/atoms/Button'
 import ProgressBar from '@/components/atoms/ProgressBar'
 import FileIcon from '@/components/atoms/FileIcon'
 
-const FileCard = ({ 
+const FileCard = forwardRef(({ 
   file, 
   onPause, 
   onResume, 
   onCancel, 
   onRemove,
   index = 0 
-}) => {
+}, ref) => {
   const formatFileSize = (bytes) => {
     if (bytes === 0) return '0 Bytes'
     const k = 1024
@@ -48,8 +49,9 @@ const FileCard = ({
   const canCancel = ['uploading', 'paused', 'pending'].includes(file.status)
   const canRemove = ['completed', 'error', 'cancelled'].includes(file.status)
 
-  return (
+return (
     <motion.div
+      ref={ref}
       initial={{ opacity: 0, y: 20, scale: 0.95 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, x: -20, scale: 0.95 }}
@@ -187,7 +189,9 @@ const FileCard = ({
         </div>
       </div>
     </motion.div>
-  )
-}
+)
+})
+
+FileCard.displayName = 'FileCard'
 
 export default FileCard
